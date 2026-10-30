@@ -1,0 +1,20 @@
+{
+    "id": "helpdesk",
+    "name": "Helpdesk",
+    "author": "Cedric Kassen",
+    "version": "1.0.0",
+    "description": "A full-featured support ticket system with server-independent and server-specific tickets, threaded conversations, attachments, email notifications and admin webhooks",
+    "category": "plugin",
+    "url": "https://github.com/CedricKassen/Pelican-Helpdesk",
+    "update_url": "https://hub.pelican.dev/plugins/helpdesk/update.json",
+    "namespace": "CedricKassen\\Helpdesk",
+    "class": "HelpdeskPlugin",
+    "panels": [
+        "admin",
+        "app",
+        "server"
+    ],
+    "panel_version": null,
+    "api_version": 1,
+    "composer_packages": null
+}
