@@ -29,6 +29,10 @@ class HelpdeskPlugin implements HasPluginSettings, Plugin
     {
         $id = str($panel->getId())->title();
 
+        if ($panel->getId() === 'app') {
+            $panel->navigation(true);
+        }
+
         $panel->discoverResources(
             plugin_path($this->getId(), "src/Filament/$id/Resources"),
             "CedricKassen\\Helpdesk\\Filament\\$id\\Resources",
@@ -44,12 +48,6 @@ class HelpdeskPlugin implements HasPluginSettings, Plugin
             'priorities' => TicketOptions::priorities(),
         ]);
     }
-
-    public function getSettingsForm(): array
-    {
-        return [
-            Section::make(trans('helpdesk::tickets.settings.email_section'))
-                ->schema([
                     Toggle::make('email_enabled')
                         ->label(trans('helpdesk::tickets.settings.email_enabled'))
                         ->helperText(trans('helpdesk::tickets.settings.email_enabled_help'))
